@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Person ID</string>
+    <string name="profile_image">Profile Image</string>
+
+    <!-- Profile Developer -->
+    <string name="dev_name">Isna Yulia</string>
+    <string name="dev_nim">6304250100</string>
+    <string name="dev_class">RPL 2D</string>
+    <string name="dev_email">isnayulia@polbeng.ac.id</string>
+    <string name="dev_phone">081364820858</string>
+    <string name="dev_bio">Mahasiswa Teknik Informatika di Politeknik Negeri Bengkalis.\n\nTertarik dalam pengembangan aplikasi mobile Android dan iOS, serta memiliki passion di bidang UI/UX design.</string>
+    <string name="title_contact">Kontak</string>
+    <string name="title_about">Tentang</string>
+</resources>
