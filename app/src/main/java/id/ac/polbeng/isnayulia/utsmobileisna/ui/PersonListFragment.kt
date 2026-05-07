@@ -33,7 +33,6 @@ class PersonListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentPersonListBinding.inflate(inflater, container, false)
-        setHasOptionsMenu(true)
         return binding.root
     }
 
@@ -88,11 +87,11 @@ class PersonListFragment : Fragment() {
                     adapter.submitList(currentPersons)
                     loadFavoriteIds()
                 } else {
-                    Toast.makeText(requireContext(), "Error: ${response.code()}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Error: \${response.code()}", Toast.LENGTH_SHORT).show()
                 }
             } catch (e: Exception) {
                 binding.progressBar.visibility = View.GONE
-                Toast.makeText(requireContext(), "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Error: \${e.message}", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -125,13 +124,13 @@ class PersonListFragment : Fragment() {
                         "female" -> "Perempuan"
                         else -> "Semua"
                     }
-                    Toast.makeText(requireContext(), "Menampilkan $quantity data $genderText", Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), "Menampilkan \$quantity data \$genderText", Toast.LENGTH_LONG).show()
                 } else {
-                    Toast.makeText(requireContext(), "Error: ${response.code()}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Error: \${response.code()}", Toast.LENGTH_SHORT).show()
                 }
             } catch (e: Exception) {
                 binding.progressBar.visibility = View.GONE
-                Toast.makeText(requireContext(), "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Error: \${e.message}", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -220,21 +219,6 @@ class PersonListFragment : Fragment() {
         val json = Gson().toJson(person)
         intent.putExtra("EXTRA_PERSON", json)
         startActivity(intent)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.main_menu, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_filter -> {
-                showAdvancedFilterDialog()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
     }
 
     override fun onDestroyView() {

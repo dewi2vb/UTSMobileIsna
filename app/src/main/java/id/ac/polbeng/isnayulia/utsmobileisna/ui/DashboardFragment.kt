@@ -13,6 +13,8 @@ import id.ac.polbeng.isnayulia.utsmobileisna.databinding.FragmentDashboardBindin
 import id.ac.polbeng.isnayulia.utsmobileisna.network.RetrofitClient
 import kotlinx.coroutines.launch
 
+import com.google.android.material.bottomnavigation.BottomNavigationView
+
 class DashboardFragment : Fragment() {
     private var _binding: FragmentDashboardBinding? = null
     private val binding get() = _binding!!
@@ -32,11 +34,11 @@ class DashboardFragment : Fragment() {
         loadStatistics()
 
         binding.btnGoToPersons.setOnClickListener {
-            view.findNavController().navigate(R.id.navigation_person_list)
+            activity?.findViewById<BottomNavigationView>(R.id.nav_view)?.selectedItemId = R.id.navigation_person_list
         }
 
         binding.btnGoToFavorites.setOnClickListener {
-            view.findNavController().navigate(R.id.navigation_favorite)
+            activity?.findViewById<BottomNavigationView>(R.id.nav_view)?.selectedItemId = R.id.navigation_favorite
         }
     }
 

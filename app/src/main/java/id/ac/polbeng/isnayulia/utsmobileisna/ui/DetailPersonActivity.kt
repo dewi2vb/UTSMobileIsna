@@ -63,14 +63,14 @@ class DetailPersonActivity : AppCompatActivity() {
             tvGender.text = if (person.gender == "male") "Laki-laki" else "Perempuan"
             tvBirthday.text = person.birthday
 
-            val imageUrl = person.image?.replace("http://", "https://")
-                ?: "https://randomuser.me/api/portraits/${if(person.gender == "male") "men" else "women"}/${person.id % 100}.jpg"
+            val diceBearUrl = "https://api.dicebear.com/7.x/adventurer/png?seed=${person.firstname}"
+            val imageUrl = person.image?.replace("http://", "https://") ?: diceBearUrl
 
             Glide.with(this@DetailPersonActivity)
                 .load(imageUrl)
-                .placeholder(android.R.drawable.ic_menu_gallery)
-                .error(android.R.drawable.ic_menu_report_image)
-                .circleCrop()
+                .placeholder(R.drawable.ic_default_avatar)
+                .error(Glide.with(this@DetailPersonActivity).load(diceBearUrl))
+                .centerCrop()
                 .into(ivProfile)
 
             person.address?.let { address ->

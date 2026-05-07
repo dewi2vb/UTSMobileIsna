@@ -9,7 +9,7 @@
     <string name="dev_class">RPL 2D</string>
     <string name="dev_email">isnayulia@polbeng.ac.id</string>
     <string name="dev_phone">081364820858</string>
-    <string name="dev_bio">Mahasiswa Teknik Informatika di Politeknik Negeri Bengkalis.\n\nTertarik dalam pengembangan aplikasi mobile Android dan iOS, serta memiliki passion di bidang UI/UX design.</string>
+    <string name="dev_bio">Mahasiswa Jurusan Teknik Informatika Politeknik Negeri Bengkalis.\n\nTertarik dalam pengembangan aplikasi mobile Android dan iOS, serta memiliki passion di bidang UI/UX design.</string>
     <string name="title_contact">Kontak</string>
     <string name="title_about">Tentang</string>
 </resources>

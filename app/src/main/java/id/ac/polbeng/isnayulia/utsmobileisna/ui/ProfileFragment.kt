@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import id.ac.polbeng.isnayulia.utsmobileisna.R
 import id.ac.polbeng.isnayulia.utsmobileisna.databinding.FragmentProfileBinding
 
@@ -25,10 +25,10 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val toolbar = binding.toolbar
-        (activity as? AppCompatActivity)?.setSupportActionBar(toolbar)
-        (activity as? AppCompatActivity)?.supportActionBar?.title = "Profil Developer"
-        (activity as? AppCompatActivity)?.supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        Glide.with(this)
+            .load(R.drawable.isna_profile)
+            .placeholder(R.drawable.ic_developer)
+            .into(binding.ivDeveloper)
     }
 
     override fun onDestroyView() {

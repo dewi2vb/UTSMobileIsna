@@ -70,13 +70,13 @@ class PersonAdapter(
                 else R.drawable.ic_favorite_border
             )
 
-            val fallbackUrl = "https://ui-avatars.com/api/?name=${person.firstname}+${person.lastname}&background=random&size=128"
-            val imageUrl = person.image?.replace("http://", "https://") ?: fallbackUrl
+            val diceBearUrl = "https://api.dicebear.com/7.x/adventurer/png?seed=${person.firstname}"
+            val imageUrl = person.image?.replace("http://", "https://") ?: diceBearUrl
 
             Glide.with(itemView.context)
                 .load(imageUrl)
                 .placeholder(R.drawable.ic_default_avatar)
-                .error(fallbackUrl)
+                .error(Glide.with(itemView.context).load(diceBearUrl))
                 .centerCrop()
                 .into(ivProfile)
 
